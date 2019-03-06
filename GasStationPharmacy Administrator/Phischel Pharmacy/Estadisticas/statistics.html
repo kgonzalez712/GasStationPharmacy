@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Phischel Pharmacy Statistics Managment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="statistics.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body role="main" ng-app = "myApp" ng-controller = "myCtrl">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #fe4c4c">
+          <a class="navbar-brand" href="#">Phischel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="location.href = '../Admin.html#'"
+                >Home <span class="sr-only">(current)</span></a>
+              </li>             
+            </ul>
+          </div>
+        </nav>
+
+        <main>
+    
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+              <div class="container" style="margin-left: -30px">
+                <h1 class="display-4"> <b>Statistics Management</b></h1>
+                <p>This page is for the management of everything related to Statistics</p>
+              </div>
+            </div>
+      
+            <div class="container" >
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-md-5">
+                  <h2>Best sellers</h2>
+                  <p>Best sellers products.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "masVendidosB()"
+                    >Best Sellers </a></p>                          
+                </div>
+                <div class="col-md-5">
+                  <h2>In new software</h2>
+                  <p>Best sellers products in new software.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "masVendidosB()"
+                    >Best Sellers in New Software </a></p>
+                </div>
+                <div class="col-md-5">
+                  <h2>Sales per Company</h2>  
+                  <p>Amount of sales per company.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "nuevoSoftwareB()"
+                    >Sales per Company </a></p>
+                </div>
+                <div class="col-md-5">
+                        <h2>Products by Company</h2>  
+                        <p>Most sold products by company.</p>
+                        <p><a class="btn btn-secondary" href="#" role="button" ng-click = "masVendidosB()"
+                          >Products by Company </a></p>
+                      </div>
+              </div>           
+            </div> <!-- /container -->
+            <div ng-show = "masvendidos">
+            <table class="table table-striped table-sm">
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+              </tr>
+              <tr>
+                <th>Acetamiphen</th>
+                <th>10</th>
+              </tr>
+              <tr>
+                <th>Paracetamol</th>
+                <th>8</th>
+              </tr>
+              <tr>
+                <th>Cataflan</th>
+                <th>6</th>
+              </tr>
+              <tr>
+                <th>Ramipril</th>
+                <th>4</th>
+              </tr>
+              <tr>
+                <th>Panadol</th>
+                <th>2</th>
+              </tr>
+            </table>
+          </div>
+          <div ng-show = "nuevosoftware">
+            <table class="table table-striped table-sm">
+              <tr>
+                <th>Compañia</th>
+                <th>Ventas</th>
+              </tr>
+              <tr>
+                  <th>Phischel</th>
+                  <th>8 000 000</th>
+                </tr>
+                <tr>
+                  <th>BombaTica</th>
+                  <th>7 000 000</th>
+                </tr>
+            </table>
+          </div>
+      </main>
+  </body>
+</html>

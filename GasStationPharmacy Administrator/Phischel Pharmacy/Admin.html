@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Phischel Pharmacy Administration</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>    
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #fe4c4c">
+          <a class="navbar-brand" href="#">Phischel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="location.href = 'Admin.html#'"
+                >Home <span class="sr-only">(current)</span></a>
+              </li>             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'AdministrarClientes/PrincipalCliente.html'"
+                  >Clients</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'AdministrarDoctores/PrincipalDoctores.html'"
+                  >Doctors</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'AdministrarMedicamentos/PrincipalMedicamentos.html'"
+                  >Medicines</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'AdministrarRoles/rolesmanagement.html'"
+                  >Rolls</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'AdministrarSucursales/branchofficemanagement.html'"
+                  >Branch offices</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'Estadisticas/statistics.html'"
+                  >Statistics</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    
+        <main role="main">
+         <!-- Main jumbotron for a primary marketing message or call to action -->
+          <div class="jumbotron" style="background: #fe4c4c; height: 280px">
+            <div class="container" style="margin-left: -30px">
+              <div class = row>
+                  <img src="Logotipo/LogotipoPhischel.jpeg" class="img-fluid" alt="Responsive image">
+                  <div class = "col">
+                      <h1 class="display-3" style="color: #FFFF; font-variant: small-caps; display: inline-block" > <b> Phischel Pharmacy </b></h1>
+                      <p style="color: #FFFF; display: inline-block">This page is for the administritaion of the Phischel Pharmacys branch</p> 
+                  </div>
+              </div>                   
+            </div>
+          </div>
+        
+          <div class="container" >
+            <!-- Example row of columns -->
+            <div class="row">
+              <div class="col-md-4">
+                <h2>Clients</h2>
+                <p>To manage everything related to clients.</p>
+                <p><a class="btn btn-secondary" href="#" role="button" 
+                  onclick="location.href = 'AdministrarClientes/PrincipalCliente.html'">
+                  Manage Clients </a></p>                          
+              </div>
+              <div class="col-md-4">
+                <h2>Doctors</h2>
+                <p>To manage everything related to doctors.</p>
+                <p><a class="btn btn-secondary" href="#" role="button" 
+                  onclick="location.href = 'AdministrarDoctores/PrincipalDoctores.html'"
+                  >Manage doctors </a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Medicines</h2>  
+                <p>To manage everything related to medicines.</p>
+                <p><a class="btn btn-secondary" href="#" role="button"
+                  onclick="location.href = 'AdministrarMedicamentos/PrincipalMedicamentos.html'"
+                  >Manage medicines </a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Roles</h2>
+                <p>To manage everything related to roles.</p>
+                <p><a class="btn btn-secondary" href="#" role="button"
+                  onclick="location.href = 'AdministrarRoles/rolesmanagement.html'"
+                  >Mange roles </a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Branch Offices</h2>
+                <p>To manage everything related to branch offices.</p>
+                <p><a class="btn btn-secondary" href="#" role="button"
+                  onclick="location.href = 'AdministrarSucursales/branchofficemanagement.html'"
+                  >Manage branch offices </a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Statistics</h2>
+                <p>Analyze the customer's buying trend through the following reports:</p>
+                <p><a class="btn btn-secondary" href="#" role="button"
+                  onclick="location.href = 'Estadisticas/statistics.html'"
+                  >Statistics view</a></p>
+              </div>
+            </div>
+    
+            <hr>
+    
+          </div> <!-- /container -->
+    
+        </main>
+    
+        <footer class="container">
+          <p>&copy; Phischel Pharmacy 2019</p>
+        </footer>
+    
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

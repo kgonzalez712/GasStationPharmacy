@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BombaTica Pharmacy brach office Managment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(42, 42, 143)">
+          <a class="navbar-brand" href="#">Bomba Tica</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="location.href = '../Admin.html#'"
+                >Home <span class="sr-only">(current)</span></a>
+              </li>             
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" ng-app = "myApp" ng-controller = "myCtrl">
+    
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: rgb(42, 42, 143)">
+              <div class="container" style="margin-left: -30px">
+                <h1 class="display-4" style="color: white"> <b>Branch Office Management</b></h1>
+                <p style="color: white">This page is for the management of everything related to branch offices</p>
+              </div>
+            </div>
+      
+            <div class="container" >
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>Add</h2>
+                  <p>To add a new Branch office to the DB.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "addBranch()"
+                    >Add a branch office </a></p>                          
+                </div>
+                <div class="col-md-4">
+                  <h2>Modify</h2>
+                  <p>To change a branch office atributes or information.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "modifyBranch()"
+                    >Modify a branch office </a></p>
+                </div>
+                <div class="col-md-4">
+                  <h2>Delete</h2>  
+                  <p>To delete a branch office from the DB.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" ng-click = "deleteBranch()"
+                    >Delete branch office </a></p>
+                </div>
+                <form ng-show = "addbranch" ng-submit="addBranchOff()">
+                <div class = "col-md-4 mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="form-control" placeholder="Name" ng-model = "branch.BranchOfficeName" required>
+                </div>
+                <div class = "col-md-4 mb-3">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" class="form-control" ng-model = "branch.BranchOfficeAddress" placeholder="1234 Main St..." required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="manager">Manager:</label>
+                    <input type="text" id="manager" class="form-control" ng-model = "branch.BranchOfficeAdminName" required>
+                </div>
+                <div class="col-md-10 mb-3">
+                        <label for="description">Description:</label>
+                    </div>
+                <div class="col-md-10 mb-3">
+                    <textarea name="description" class="form-control" id="description" ng-model = "branch.BranchOfficeDescription" cols="80" rows="8"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-secundary"></input>
+                </div>
+              </form>
+                <table class="table table-striped table-sm" ng-show = "deletebranch">
+                  <tr>
+                      <th>Branch Office Name</th>
+                      <th>Address</th>
+                      <th>Manager</th>
+                      <th>Description</th>
+                      <th>Delete</th>
+                  </tr>
+                  <tr ng-repeat = "branch in branches">
+                      <th>{{branch.BranchOfficeName}}</th>
+                      <th>{{branch.BranchOfficeAddress}}</th>
+                      <th>{{branch.BranchOfficeAdminName}}</th>
+                      <th>{{branch.BranchOfficeDescription}}</th>
+                      <th><button class="btn btn-secundary" ng-click = "deleteBranchOff(branch)">Delete</button></th>
+                  </tr>
+              </table>
+              <table class="table table-striped table-sm" ng-show = "branchtable">
+                <tr>
+                    <th>Branch Office Name</th>
+                    <th>Address</th>
+                    <th>Manager</th>
+                    <th>Description</th>
+                    <th>Modify</th>
+                </tr>
+                <tr ng-repeat = "branch in branches">
+                  <th>{{branch.BranchOfficeName}}</th>
+                  <th>{{branch.BranchOfficeAddress}}</th>
+                  <th>{{branch.BranchOfficeAdminName}}</th>
+                  <th>{{branch.BranchOfficeDescription}}</th>
+                  <th><button class="btn btn-secundary" ng-click = "modifyB(branch)">Modify</button></th>
+                </tr>
+            </table>
+              <form ng-show = "modify" ng-submit = "updateBranch()">
+                <div class = "col-md-4 mb-3">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" class="form-control" ng-model = "branch.BranchOfficeName" placeholder="Name" required>
+              </div>
+              <div class = "col-md-4 mb-3">
+                  <label for="address">Address:</label>
+                  <input type="text" id="address" class="form-control" ng-model ="branch.BranchOfficeAddress" placeholder="1234 Main St..." required>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="manager">Manager:</label>
+                  <input type="text" id="manager" class="form-control" ng-model = "branch.BranchOfficeAdminName" required>
+              </div>
+              <div class="col-md-10 mb-3">
+                      <label for="description">Description:</label>
+                  </div>
+              <div class="col-md-10 mb-3">
+                  <textarea name="description" class="form-control" id="description" ng-model = "branch.BranchOfficeDescription" cols="80" rows="8"></textarea>
+              </div>
+              <div class="col-md-4">
+                  <input type="submit" class="btn btn-secundary" ></input>
+              </div>
+            </form>
+              </div>            
+            </div>
+          </main>
+  </body>
+</html>
