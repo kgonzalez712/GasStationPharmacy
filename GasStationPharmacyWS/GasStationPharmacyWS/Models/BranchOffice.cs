@@ -1,5 +1,8 @@
 ﻿namespace GasStationPharmacyWS.Models
 {
+    /// <summary>
+    /// Clase Sucursal
+    /// </summary>
     public class BranchOffice
     {
         public string BranchOfficeName { get; set; }

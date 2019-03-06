@@ -25,6 +25,10 @@ namespace GasStationPharmacyWS.Models
             medListP.Add(a);
         }
 
+        /// <summary>
+        /// Maneja una sola instancia de medicina para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static MedicineRegister GetInstance()
         {
             if (medReg == null)
@@ -36,11 +40,19 @@ namespace GasStationPharmacyWS.Models
             return medReg;
         }
 
+        /// <summary>
+        /// retorna las medicinas para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de medicinas </returns>
         public List<Medicine> GetAllMedicines(List<Medicine> list)
         {
             return list;
         }
 
+        /// <summary>
+        /// retorna una medicina para las dos farmacias
+        /// </summary>
+        /// <returns> Una medicina </returns>
         public Medicine GetMedicine(List<Medicine> list, string name)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -52,11 +64,19 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+        /// <summary>
+        /// Añade medicinas para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddMedicine(List<Medicine> list, Medicine med)
         {
             list.Add(med);
         }
 
+        /// <summary>
+        /// Elimina medicinas para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo elimina, true si lo elimina </returns>
         public bool RemoveMedicine(List<Medicine> list, string id)
         {
             var action = false;
@@ -74,6 +94,11 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+
+        /// <summary>
+        /// modifica medicinas para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateMedicine(List<Medicine> list, string id, Medicine value)
         {
             var action = false;

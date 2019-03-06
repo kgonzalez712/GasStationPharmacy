@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 
 namespace GasStationPharmacyWS.Models
-{
+{       /// <summary>
+    /// Clase Receta
+    /// </summary>
     public class Recipe
     {
         public int RecipeNumber { get; set; }

@@ -37,7 +37,10 @@ namespace GasStationPharmacyWS.Models
             adminListB.Add(b);
         }
 
-
+        /// <summary>
+        /// Maneja una sola instancia de administrador para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static AdminRegister GetInstance()
         {
             if (adminReg == null)
@@ -49,12 +52,19 @@ namespace GasStationPharmacyWS.Models
             return adminReg;
         }
 
-
+        /// <summary>
+        /// retorna los administradores para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de administradores </returns>
         public List<Admin> GetAllAdmins(List<Admin> list)
         {
             return list;
         }
 
+        /// <summary>
+        /// retorna un administrador para las dos farmacias
+        /// </summary>
+        /// <returns> Un administrador </returns>
         public Admin GetAdmin(List<Admin> list, long id)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -66,11 +76,19 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+        /// <summary>
+        /// Añade administradores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddAdmin(List<Admin> list, Admin ad)
         {
             list.Add(ad);
         }
 
+        /// <summary>
+        /// Elimina administradores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo elimina, true si lo elimina </returns>
         public bool RemoveAdmin(List<Admin> list, long id)
         {
             var action = false;
@@ -88,6 +106,10 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+        /// <summary>
+        /// modifica administradores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateAdmin(List<Admin> list, long id, Admin value)
         {
             var action = false;

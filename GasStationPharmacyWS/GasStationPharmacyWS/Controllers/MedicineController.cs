@@ -11,6 +11,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Medicines")]
     public class MedicineController : ApiController
     {
+        /// <summary>
+        /// Controladores para los metodos GET para las medicinas de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de medicinas </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Medicine> GetAllPhischelMedicines()
@@ -25,6 +29,10 @@ namespace GasStationPharmacyWS.Controllers
             return MedicineRegister.GetInstance().GetAllMedicines(MedicineRegister.medListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para las medicinas de las dos farmacias
+        /// </summary>
+        /// <returns> Una medicina en especifico </returns>
         [HttpGet]
         [Route("Phischel/{name}")]
         public IHttpActionResult GetPhischelMedicineById(string name)
@@ -45,6 +53,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para las medicinas de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewMed")]
         public HttpResponseMessage PostNewPhischelMedicine([FromBody] Medicine value)
@@ -63,6 +74,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para las medicinas de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateMedicine")]
         public HttpResponseMessage PutPhischelMedicineNAs(string id, [FromBody] Medicine value)
@@ -183,6 +197,9 @@ namespace GasStationPharmacyWS.Controllers
         //    return responseB;
         //}
 
+        /// <summary>
+        /// Controladores para los metodos DELETE para las medicinas de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteMedicine")]
         public HttpResponseMessage DeletePhischelMedicine(string id)

@@ -47,7 +47,10 @@ namespace GasStationPharmacyWS.Models
 
         }
 
-
+        /// <summary>
+        /// Maneja una sola instancia de cliente para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static ClientRegister GetInstance()
         {
             if (clientReg == null)
@@ -62,12 +65,20 @@ namespace GasStationPharmacyWS.Models
         //----------------------------------------- Phischel & BombaTica ----------------------------------------------------------------//
 
 
-
+        /// <summary>
+        /// retorna los clientes para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de clientes </returns>
         public List<Client> GetAllClients(List<Client> list)
         {
             return list;
         }
 
+
+        /// <summary>
+        /// retorna un cliente para las dos farmacias
+        /// </summary>
+        /// <returns> Un cliente </returns>
         public Client GetClient(List<Client> list, long id)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -79,6 +90,11 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+
+        /// <summary>
+        /// Añade clientes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddClient(List<Client> list, Client client)
         {
             list.Add(client);
@@ -86,6 +102,10 @@ namespace GasStationPharmacyWS.Models
             //DataManager.GetInstance().WriteFileClients(list);
         }
 
+        /// <summary>
+        /// elimina clientes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo elimina, true si lo elimina </returns>
         public bool RemoveClient(List<Client> list, long id)
         {
             var action = false;
@@ -103,6 +123,10 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+        /// <summary>
+        /// modifica clientes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateClient(List<Client> list, long id, Client value)
         {
             var action = false;

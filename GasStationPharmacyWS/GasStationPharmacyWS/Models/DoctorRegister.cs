@@ -39,6 +39,10 @@ namespace GasStationPharmacyWS.Models
             docListB.Add(b);
         }
 
+        /// <summary>
+        /// Maneja una sola instancia de doctor para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static DoctorRegister GetInstance()
         {
             if (docReg == null)
@@ -50,11 +54,20 @@ namespace GasStationPharmacyWS.Models
             return docReg;
         }
 
+        /// <summary>
+        /// retorna los doctores para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de doctores </returns>
         public List<Doctor> GetAllDoctors(List<Doctor> list)
         {
             return list;
         }
 
+
+        /// <summary>
+        /// retorna un doctor para las dos farmacias
+        /// </summary>
+        /// <returns> Un doctor </returns>
         public Doctor GetDoctor(List<Doctor> list, long id)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -66,6 +79,10 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+        /// <summary>
+        /// Añade administradores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddDoctor(List<Doctor> list, Doctor doc)
         {
             list.Add(doc);
@@ -86,6 +103,10 @@ namespace GasStationPharmacyWS.Models
             }
         }
 
+        /// <summary>
+        /// Elimina doctores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo elimina, true si lo elimina </returns>
         public bool RemoveDoctor(List<Doctor> list, long id)
         {
             var action = false;
@@ -103,6 +124,10 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+        /// <summary>
+        /// modifica doctores para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateDoctor(List<Doctor> list, long id, Doctor value)
         {
             var action = false;

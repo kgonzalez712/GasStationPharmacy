@@ -38,6 +38,10 @@ namespace GasStationPharmacyWS.Models
             orderListB.Add(a);
         }
 
+        /// <summary>
+        /// Maneja una sola instancia de orden para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static OrderRegister GetInstance()
         {
             if (orderReg == null)
@@ -49,11 +53,20 @@ namespace GasStationPharmacyWS.Models
             return orderReg;
         }
 
+
+        /// <summary>
+        /// retorna las ordenes para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de ordenadores </returns>
         public List<Order> GetAllOrders(List<Order> list)
         {
             return list;
         }
 
+        /// <summary>
+        /// retorna una orden para las dos farmacias
+        /// </summary>
+        /// <returns> Una orden </returns>
         public Order GetOrder(List<Order> list, int id)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -65,11 +78,19 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+        /// <summary>
+        /// Añade ordenes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddOrder(List<Order> list, Order r)
         {
             list.Add(r);
         }
 
+        /// <summary>
+        /// Elimina ordenes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo ordenes, true si lo elimina </returns>
         public bool RemoveOrder(List<Order> list, int id)
         {
             var action = false;
@@ -87,6 +108,11 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+
+        /// <summary>
+        /// modifica ordenes para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateOrder(List<Order> list, int id, Order value)
         {
             var action = false;

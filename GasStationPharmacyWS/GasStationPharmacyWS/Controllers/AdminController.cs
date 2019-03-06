@@ -12,6 +12,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Admins")]
     public class AdminController : ApiController
     {
+        /// <summary>
+        /// Controladores para los metodos GET para los administradores de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de administradores </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Admin> GetAllPhischelAdmins()
@@ -26,6 +30,10 @@ namespace GasStationPharmacyWS.Controllers
             return AdminRegister.GetInstance().GetAllAdmins(AdminRegister.adminListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para los admin de las dos farmacias
+        /// </summary>
+        /// <returns> Un admin en especifico </returns>
         [HttpGet]
         [Route("Phischel/{id}")]
         public IHttpActionResult GetPhischelAdminById(long id)
@@ -44,6 +52,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para los admin de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewAdmin")]
         public HttpResponseMessage PostNewPhischelAdmin([FromBody] Admin value)
@@ -62,6 +73,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para los admin de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateAdmin")]
         public HttpResponseMessage PutPhischelAdmin(long id, [FromBody] Admin value)
@@ -242,7 +256,9 @@ namespace GasStationPharmacyWS.Controllers
         //    return responseB;
         //}
 
-
+        /// <summary>
+        /// Controladores para los metodos DELETE para los admin de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteAdmin")]
         public HttpResponseMessage DeletePhischelAdmin(long id)

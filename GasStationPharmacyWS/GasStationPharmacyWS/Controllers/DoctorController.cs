@@ -12,6 +12,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Doctors")]
     public class DoctorController : ApiController
     {
+        /// <summary>
+        /// Controladores para los metodos GET para los doctores de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de doctores </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Doctor> GetAllPhischelDoctors()
@@ -27,6 +31,10 @@ namespace GasStationPharmacyWS.Controllers
             return DoctorRegister.GetInstance().GetAllDoctors(DoctorRegister.docListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para los doctores de las dos farmacias
+        /// </summary>
+        /// <returns> Un doctor en especifico </returns>
         [HttpGet]
         [Route("Phischel/{id}")]
         public IHttpActionResult GetPhischelDoctorById(long id)
@@ -45,6 +53,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para los doctores de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewDoctor")]
         public HttpResponseMessage PostNewPhischelDoctor([FromBody] Doctor value)
@@ -63,6 +74,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para los doctores de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateDoc")]
         public HttpResponseMessage PutPhischelDoctor(long id, [FromBody] Doctor value)
@@ -212,6 +226,9 @@ namespace GasStationPharmacyWS.Controllers
         //    return responseB;
         //}
 
+        /// <summary>
+        /// Controladores para los metodos DELETE para los doctores de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteDoctor")]
         public HttpResponseMessage DeleteDoctorClient(long id)

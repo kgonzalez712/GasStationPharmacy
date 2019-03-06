@@ -31,7 +31,10 @@ namespace GasStationPharmacyWS.Models
             branchListP.Add(a);
         }
 
-
+        /// <summary>
+        /// Maneja una sola instancia de sucursal para tratar las adicionies, modificaciones y eliminaciones de clase con cada llamado del controlador
+        /// </summary>
+        /// <returns></returns>
         public static BranchOfficeRegister GetInstance()
         {
             if (branchReg == null)
@@ -43,13 +46,19 @@ namespace GasStationPharmacyWS.Models
             return branchReg;
         }
 
-
+        /// <summary>
+        /// retorna las sucursales para las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de sucursales </returns>
         public List<BranchOffice> GetAllBranches(List<BranchOffice> list)
         {
             return list;
         }
 
-
+        /// <summary>
+        /// retorna una sucursal para las dos farmacias
+        /// </summary>
+        /// <returns> Un sucursal </returns>
         public BranchOffice GetBranch(List<BranchOffice> list, string name)
         {
             for (var i = 0; i < list.Count(); i++)
@@ -61,11 +70,20 @@ namespace GasStationPharmacyWS.Models
             return null;
         }
 
+
+        /// <summary>
+        /// Añade sucursales para las dos farmacias
+        /// </summary>
+        /// <returns> false si no se crea, true si se crea </returns>
         public void AddBranchOffice(List<BranchOffice> list, BranchOffice branch)
         {
             list.Add(branch);
         }
 
+        /// <summary>
+        /// Elimina sucursales para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo elimina, true si lo elimina </returns>
         public bool RemoveBranchOffice(List<BranchOffice> list, string id)
         {
             var action = false;
@@ -83,6 +101,10 @@ namespace GasStationPharmacyWS.Models
             return action;
         }
 
+        /// <summary>
+        /// modifica sucursales para las dos farmacias
+        /// </summary>
+        /// <returns> false si no lo modifica, true si lo modifica </returns>
         public bool UpdateBranchOffice(List<BranchOffice> list, string id, BranchOffice value)
         {
             var action = false;

@@ -12,7 +12,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Clients")]
     public class ClientController : ApiController
     {
-        // GET: api/Clients/Phischel
+        /// <summary>
+        /// Controladores para los metodos GET para los clientes de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de clientes </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Client> GetAllPhischelClients()
@@ -20,15 +23,17 @@ namespace GasStationPharmacyWS.Controllers
             return ClientRegister.GetInstance().GetAllClients(ClientRegister.clientListP);
         }
 
-        // GET: api/Clients/BombaTica
+ 
         [HttpGet]
         [Route("BombaTica")]
         public List<Client> GetAllBombaTicaClients()
         {
             return ClientRegister.GetInstance().GetAllClients(ClientRegister.clientListB);
         }
-
-        // GET: api/Clients/Phischel/{id}
+        /// <summary>
+        /// Controladores para los metodos GET para los clientes de las dos farmacias
+        /// </summary>
+        /// <returns> Un cliente en especifico </returns>
         [HttpGet]
         [Route("Phischel/{id}")]
         public IHttpActionResult GetPhischelClientById(long id)
@@ -38,7 +43,6 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
-        // GET: api/Clients/BombaTica/{id}
         [HttpGet]
         [Route("BombaTica/{id}")]
         public IHttpActionResult GetBombaTicaClientById(long id)
@@ -48,7 +52,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
-        // POST: api/Clients/Phischel/NewClient
+        /// <summary>
+        /// Controladores para los metodos Post para los clientes de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewClient")]
         public HttpResponseMessage PostNewPhischelClient([FromBody] Client value)
@@ -67,7 +73,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
-        // PUT: api/Clients/Phischel/{id}/UpdateFN
+        /// <summary>
+        /// Controladores para los metodos PUT para los clientes de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateClient")]
         public HttpResponseMessage PutPhischelClient(long id, [FromBody] Client value)
@@ -83,7 +91,7 @@ namespace GasStationPharmacyWS.Controllers
             return responseB;
         }
 
-        // PUT: api/Clients/Phischel/{id}/UpdateFN
+
         [HttpPut]
         [Route("BombaTica/{id}/UpdateClient")]
         public HttpResponseMessage PutBombaTicaClient(long id, [FromBody] Client value)
@@ -342,6 +350,9 @@ namespace GasStationPharmacyWS.Controllers
         //    return responseB;
         //}
 
+        /// <summary>
+        /// Controladores para los metodos DELETE para los clientes de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteClient")]
         public HttpResponseMessage DeletePhischelClient(long id)

@@ -13,6 +13,11 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Roles")]
     public class RoleController : ApiController
     {
+
+        /// <summary>
+        /// Controladores para los metodos GET para los roles de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de roles </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Role> GetAllPhischelRoles()
@@ -27,6 +32,10 @@ namespace GasStationPharmacyWS.Controllers
             return RoleRegister.GetInstance().GetAllRole(RoleRegister.roleListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para los roles de las dos farmacias
+        /// </summary>
+        /// <returns> Un rol en especifico </returns>
         [HttpGet]
         [Route("Phischel/{name}")]
         public IHttpActionResult GetPhischelRoleById(string name)
@@ -45,6 +54,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para los roles de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewRole")]
         public HttpResponseMessage PostNewPhischelRole([FromBody] Role value)
@@ -63,6 +75,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para los roles de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateRole")]
         public HttpResponseMessage PutPhischelRole(string id, [FromBody] Role value)
@@ -94,7 +109,9 @@ namespace GasStationPharmacyWS.Controllers
             return responseB;
         }
 
-
+        /// <summary>
+        /// Controladores para los metodos DELETE para los roles de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteRole")]
         public HttpResponseMessage DeletePhischelRole(string id)

@@ -11,6 +11,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/Orders")]
     public class OrderController : ApiController
     {
+        /// <summary>
+        /// Controladores para los metodos GET para las ordenes de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de ordernes </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<Order> GetAllPhischelOrders()
@@ -25,6 +29,10 @@ namespace GasStationPharmacyWS.Controllers
             return OrderRegister.GetInstance().GetAllOrders(OrderRegister.orderListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para las ordenes de las dos farmacias
+        /// </summary>
+        /// <returns> Una ordenes en especifico </returns>
         [HttpGet]
         [Route("Phischel/{id}")]
         public IHttpActionResult GetPhischelOrderById(int id)
@@ -43,6 +51,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para los ordenes de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewOrder")]
         public HttpResponseMessage PostNewPhischelOrder([FromBody] Order value)
@@ -61,6 +72,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para las ordenes de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateOrder")]
         public HttpResponseMessage PutPhischelOrder(int id, [FromBody] Order value)
@@ -91,7 +105,9 @@ namespace GasStationPharmacyWS.Controllers
             return responseB;
         }
 
-
+        /// <summary>
+        /// Controladores para los metodos DELETE para las ordenes de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteOrder")]
         public HttpResponseMessage DeletePhischelOrder(int id)

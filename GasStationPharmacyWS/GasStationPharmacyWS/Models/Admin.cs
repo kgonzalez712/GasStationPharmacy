@@ -2,6 +2,9 @@
 
 namespace GasStationPharmacyWS.Models
 {
+    /// <summary>
+    /// Clase Admin
+    /// </summary>
     public class Admin
     {
         public long AdminId { get; set; }

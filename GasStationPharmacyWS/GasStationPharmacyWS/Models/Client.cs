@@ -5,6 +5,9 @@ using System.Web;
 
 namespace GasStationPharmacyWS.Models
 {
+    /// <summary>
+    /// Clase Cliente
+    /// </summary>
     public class Client
     {
         public long ClientId { get; set; }

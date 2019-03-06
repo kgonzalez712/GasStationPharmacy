@@ -1,5 +1,8 @@
 ﻿namespace GasStationPharmacyWS.Models
 {
+    /// <summary>
+    /// Clase Medicina
+    /// </summary>
     public class Medicine
     {
         public string MedicineName { get; set; }

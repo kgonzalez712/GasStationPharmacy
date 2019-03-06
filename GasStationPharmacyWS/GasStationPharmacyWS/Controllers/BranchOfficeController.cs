@@ -11,6 +11,10 @@ namespace GasStationPharmacyWS.Controllers
     [RoutePrefix("api/BranchOffices")]
     public class BranchOfficeController : ApiController
     {
+        /// <summary>
+        /// Controladores para los metodos GET para las sucursales de las dos farmacias
+        /// </summary>
+        /// <returns> Una Lista de Roles </returns>
         [HttpGet]
         [Route("Phischel")]
         public List<BranchOffice> GetAllPhischelBranches()
@@ -25,6 +29,10 @@ namespace GasStationPharmacyWS.Controllers
             return BranchOfficeRegister.GetInstance().GetAllBranches(BranchOfficeRegister.branchListB);
         }
 
+        /// <summary>
+        /// Controladores para los metodos GET para las sucursales de las dos farmacias
+        /// </summary>
+        /// <returns> Una sucursal en especifico </returns>
         [HttpGet]
         [Route("Phischel/{name}")]
         public IHttpActionResult GetPhischelBranchtById(string name)
@@ -43,6 +51,9 @@ namespace GasStationPharmacyWS.Controllers
             return Ok(val);
         }
 
+        /// <summary>
+        /// Controladores para los metodos Post para las sucursales de las dos farmacias
+        /// </summary>
         [HttpPost]
         [Route("Phischel/NewBranch")]
         public HttpResponseMessage PostNewPhischelBranch([FromBody] BranchOffice value)
@@ -61,6 +72,9 @@ namespace GasStationPharmacyWS.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Controladores para los metodos PUT para las sucursales de las dos farmacias
+        /// </summary>
         [HttpPut]
         [Route("Phischel/{id}/UpdateBranch")]
         public HttpResponseMessage PutPhischelBranch(string id, [FromBody] BranchOffice value)
@@ -188,6 +202,9 @@ namespace GasStationPharmacyWS.Controllers
         //    return responseB;
         //}
 
+        /// <summary>
+        /// Controladores para los metodos DELETE para las sucursales de las dos farmacias
+        /// </summary>
         [HttpDelete]
         [Route("Phischel/{id}/DeleteBranch")]
         public HttpResponseMessage DeletePhischelBranch(string id)

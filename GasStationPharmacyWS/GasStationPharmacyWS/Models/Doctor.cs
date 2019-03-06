@@ -2,6 +2,9 @@
 
 namespace GasStationPharmacyWS.Models
 {
+    /// <summary>
+    /// Clase Doctor
+    /// </summary>
     public class Doctor
     {
         public long DoctorId { get; set; }
@@ -11,8 +14,5 @@ namespace GasStationPharmacyWS.Models
         public DateTime DoctorBirthday { get; set; }
         public string DoctorAddress { get; set; }
         public string AccountPassword { get; set; }
-
-
-
     }
 }
