@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset= "UTF-8"/>
+	<title>BombaTica Pharmacy Registration</title>
+	<link rel="stylesheet" type="text/css" href="css/registerBomba.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/bombaMethods.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="appController">
+	<header>
+		<section id="navBar">
+			<span>BombaTica</span>
+			<nav class="aright">
+				<a href="homeBomba.html" >Home</a>
+			</nav>
+		</section>
+		<section id="title">
+			<h1>Registration</h1>
+		</section>
+	</header>
+	<form id="registration" ng-submit="createUser()" >
+		<fieldset>
+			<legend>Register</legend>
+			<label>
+				Number Id
+				<input class="input" type="text" name="idNumber" pattern="[0-9]{1} ?[0-9]{4} ?[0-9]{4}" autocomplete="off" placeholder="x xxxx xxxx" required ng-model="user.ClientId">
+			</label>
+			<label>
+				First Name
+				<input class="input" type="text" name="fName" autocomplete="off" required ng-model="user.ClientFirstName">
+			</label>
+			<label>
+				Last Name
+				<input class="input" type="text" name="lName" autocomplete="off" required ng-model="user.ClientLastName">
+			</label>
+			<label>
+				Email
+				<input class="input" type="email" name="email" autocomplete="off" required ng-model="user.ClientAccountEmail">
+			</label>
+			<label>
+				Password
+				<input class="input" type="Password" name="password" autocomplete="off" required ng-model="user.ClientAccountPassword">
+			</label>
+			<label>
+				Residence Place
+				<input class="input" type="text" name="rPlace" autocomplete="off" required ng-model="user.ClientAddress">
+			</label>
+			<label>
+				Birthdate
+				<input class="input" type="date" name="birth" autocomplete="off" required ng-model="user.ClientBirthday">
+			</label>
+			<label>
+				Cell Phone
+				<input class="input" type="text" name="cPhone" pattern="[0-9]{8}" placeholder="2222 8888" autocomplete="off" required ng-model="user.ClientPhoneNumber">
+			</label>
+			<label>
+				Record
+				<input class="input" type="text" name="record" autocomplete="off" required ng-model="user.ClientAdditionalInformation">
+			</label>
+			<input type="submit" name="submit" value="Register" class="choice">
+			<input type="reset" name="recet" value="Reset" class="choice">
+			<input type="button" value="Continue" class=" choise" id="choise" onclick="location.href='logIn.html'">
+		</fieldset>
+	</form>
+</body>
+<footer>
+	&copy;Derechos Reservados
+</footer>
+</html>

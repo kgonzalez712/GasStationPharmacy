@@ -1,0 +1,219 @@
+/**{
+	border: 1px solid;
+}*/
+
+body{
+	margin: 0px;
+}
+
+#navBar{
+	background-color: #a12428;
+	color: #ffffff;
+	padding-right: 6%;
+	padding-left: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	width: 100%;
+}
+
+#navBar span{
+	font-size: 25px;
+	font-variant-caps: small-caps;
+	font-weight: bold;
+}
+
+.aright{
+	display: inline-block;
+	float: right;
+	padding-right: 1%;
+	padding-left: 1%;
+	width: 15%;
+	padding-top: 0.5%;
+}
+
+.aright a{
+	color: #ffffff;
+	text-decoration: none;
+	margin-right: 1%;
+	padding: 6%;
+}
+
+.aright a:hover{
+	background-color: #d25712;
+	color: #ffffff ;
+}
+
+#title{
+	background-color: #d25712;
+	background-image: url("../img/farmacia.jpg");
+	background-origin: top;
+	background-size: cover;
+	width: 100%;
+	text-align: center;
+	float: left;
+	color: #ffffff;
+	padding-bottom: 2%;
+	margin-bottom: 2%;
+}
+
+#title h1{
+	text-transform: uppercase;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	font-size: 65px;
+	background-color: rgba(161,36,40,0.9);
+}
+
+#title a{
+	color: #ffffff;
+	background-color: rgba(186,60,33,0.5);
+	text-decoration: none;
+	padding: 1%;
+	display: inline-block;
+	border-radius: 5px;
+	margin-right: 2%;
+	width: 20%;
+}
+
+#title .active{
+	background-color: #ba3c21;
+	font-variant-caps: small-caps;
+	text-decoration: underline;
+}
+
+#enter_recipe, #update_recipe{
+	margin-bottom: 3%;
+}
+
+#enter_recipe div, #update_recipe div{
+	float: right;
+	display: inline-block;
+	width: 45%;
+	height: 400px;
+}
+
+#enter_recipe fieldset, #update_recipe fieldset, #eliminate_recipe fieldset{
+	width: 50%;
+	margin: 0 auto;
+	border-color: #d25712;
+	background-color: rgba(255,255,255,0.7);	
+}
+
+#enter_recipe legend, #update_recipe legend, #eliminate_recipe legend{
+	background-color: #a12428;
+	border-radius: 10px;
+	padding: 1%;
+	color: #ffffff;
+}
+
+#enter_recipe label, #update_recipe label, #eliminate_recipe label{
+	width: 50%;
+}
+
+#enter_recipe label, input, #update_recipe label, input, #eliminate_recipe label, input{
+	display: block;
+	margin-left: 1%;
+	margin-bottom: 3%;
+	margin-top: 1%;
+	color: #a12428;
+	font-weight: bold;
+}
+
+#enter_recipe .input, #update_recipe .input, #eliminate_recipe .input{
+	width: 50%;
+	border-color: #a12428; 
+	border-style: inset;
+	border-radius: 5px;
+	background-color: #fafdd5;
+	padding: 1%;
+	color: #000000;
+	font-weight: normal;
+}
+
+#enter_recipe .choice, #update_recipe .choice, #eliminate_recipe .choice{
+	display: inline-block;
+	width: 15%;
+	/*padding: 1%;*/
+	color: #000000;
+	font-weight: normal;
+}
+
+#enter_recipe #file, #update_recipe #fileU{
+ 	color: transparent;
+}
+
+#update_recipe, #eliminate_recipe{
+	display: none;
+}
+
+footer{
+	background-color: #a12428;
+	margin-top: 8%;
+	padding: 30px;
+	text-align: center;
+	color: #ffffff;
+}
+
+table{
+	box-sizing: border-box;
+	width: 70%;
+	margin: 0 auto;
+	font-family: times, "times new roman", arial;
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: normal;
+	padding-top: 10px;
+}
+
+table tr:first-child>th{ 
+	background: -webkit-linear-gradient(top, #ba3c21, #d6600b);
+	background: -ms-linear-gradient(top, #ba3c21, #d6600b);
+	background: -o-linear-gradient(top, #ba3c21, #d6600b);
+	background: -moz-linear-gradient(top, #ba3c21, #d6600b);
+	background: linear-gradient(top, #ba3c21, #d6600b);
+	border-radius: 5px 5px 0px 0px;
+	border-right-width: 2px;
+	border-left-width: 2px; 
+	border-top-width: 2px;
+	border-bottom-width: 5px; 
+	border-color: #14383c;
+	border-style: solid;
+	color: 	#f7f6e7;
+	text-transform: uppercase;
+	padding: 15px !important;
+	text-align: center; 
+	opacity: 1 !important;
+}
+
+table tr:first-child th:nth-child(2), tr:first-child th:nth-child(3){
+	text-align: center; 
+}
+
+table tr>td:first-child{
+	text-align: center !important;
+}
+
+table tr td{
+	opacity: 0.7;
+	text-align: center; 
+	background-color: #ea6d12;
+	padding: 7px;
+	border-radius: 2px;
+	color: #ffffff;
+}
+
+table tr:hover td{
+	opacity: 1;
+}
+
+table caption{
+	color: #a12428;
+	font-weight: bold;
+	font-variant-caps: small-caps;
+	font-size: 30px;
+}
+
+/**{
+	border:1px solid;
+}*/
+

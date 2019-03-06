@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset= "UTF-8"/>
+	<title>Phishel Pharmacy Registration</title>
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+<body>
+	<header>
+		<section id="navBar">
+			<span>Phishel</span>
+			<nav class="aright">
+				<a href="home.html" >Home</a>
+			</nav>
+		</section>
+		<section id="title">
+			<h1>Log In</h1>
+		</section>
+	</header>
+	<form id="registration">
+		<fieldset>
+			<legend>Log In</legend>
+			<label>
+				Number Id
+				<input class="input" type="text" name="idNumber" pattern="[0-9]{9}" autocomplete="off" placeholder="Enter the user's id" required>
+			</label>
+			<label>
+				Password
+				<input class="input" type="password" name="password" autocomplete="off" placeholder="Enter password" required>
+			</label>
+			<input type="submit" name="submit" value="Log in" class="choice">
+			<input type="reset" name="recet" value="Reset" class="choice">
+		</fieldset>
+	</form>
+</body>
+<footer>
+	&copy;Derechos Reservados
+</footer>
+</html>

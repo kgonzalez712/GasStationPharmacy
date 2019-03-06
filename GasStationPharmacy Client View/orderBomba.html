@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset= "UTF-8"/>
+	<title>BombaTica Pharmacy</title>
+	<link rel="stylesheet" type="text/css" href="css/phishelBomba.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/bombaOrder.js"></script>
+	<script type="text/javascript" src="js/bombaMethods.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="appController">
+	<header>
+		<section id="navBar">
+			<span>BombaTica</span>
+			<nav class="aright">
+				<a href="registerBomba.html" >Register</a>
+				<a href="logInBomba.html">Log in</a>
+				<a href="accountBomba.html"><i class="fas fa-user fa-1x"></i></a>
+			</nav>
+		</section>
+		<section id="title">
+			<h1>BombaTica Pharmacy</h1>
+			<nav>
+				<a href="homeBomba.html">Home</a>
+				<a href="enter_recipeBomba.html">Enter Recipe</a>
+				<a href="orderBomba.html" class="active">Order</a>				
+			</nav>
+		</section>
+	</header>
+	<form id="enter_recipe" ng-submit="createOrder()">
+		<fieldset>
+			<legend>Order</legend>			
+			<label>
+				Pickup Branch
+				<select required ng-model="orderCreate.OrderBranch">
+					<option value="">Choose...</option>
+					<option value="Autofarmacia Escazú">Autofarmacia Escazú</option>
+					<option value="Automercado Alajuela">Automercado Alajuela</option>
+					<option value="Automercado Escazú">Automercado Escazú</option>
+					<option value="Automercado Guadalupe">Automercado Guadalupe</option>
+					<option value="Automercado Heredia">Automercado Heredia</option>
+					<option value="Automercado Lindora">Automercado Lindora</option>
+					<option value="Automercado Moravia">Automercado Moravia</option>
+					<option value="Automercado Río Oro">Automercado Río Oro</option>
+					<option value="Automercado San Francisco de Heredia">Automercado San Francisco de Heredia</option>
+					<option value="Automercado Santo Domingo">Automercado Santo Domingo</option>
+				</select>
+			</label>
+			<label>
+				Name
+				<input class="input" type="text" name="clientName" autocomplete="off" ng-model="orderCreate.OrderClient" required>
+			</label>
+			<label>
+				Preferred Phone
+				<input class="input" type="text" name="medications" pattern="[0-9]{8}" autocomplete="off" ng-model="orderCreate.OrderPhoneNo" required>
+			</label>
+			<label>
+				<label>
+					Aspirina<input type="checkbox" name="aspirina" style="display: inline-block; margin-left: 4%" class="medicineCreate" value="aspirina" id="aspirina" ng-model="orderCreate.aspirina" onchange="activate(this,'aspirinaCount')"><input type="number" style="width: 30px;" class="medCreate" name="aspirinaCount" ng-model="orderCreate.aspirinaCount" id="aspirinaCount" min="0" max="10" disabled>
+				</label>
+				<label>
+					Acetaminofen<input type="checkbox" name="acetaminofen" style="display: inline-block; margin-left: 4%" class="medicineCreate" value="acetaminofen" ng-model="orderCreate.acetaminofen" id="acetaminofen" onchange="activate(this,'acetaminofenCount')"><input type="number" style="width: 30px;" class="medCreate" name="acetaminofenCount" ng-model="orderCreate.acetaminofenCount" id="acetaminofenCount" min="0" max="10" disabled>
+				</label>
+				<label>
+					Ibuprofeno<input type="checkbox" name="ibuprofeno" style="display: inline-block; margin-left: 4%" class="medicineCreate" value="ibuprofeno" ng-model="orderCreate.ibuprofeno" id="ibuprofeno" onchange="activate(this,'ibuprofenoCount')"><input type="number" style="width: 30px;" class="medCreate" name="ibuprofenoCount" ng-model="orderCreate.ibuprofenoCount" id="ibuprofenoCount" min="0" max="10" disabled>
+				</label>
+				<label>
+					Amoxicilina<input type="checkbox" name="amoxicilina" style="display: inline-block; margin-left: 4%" class="medicineCreate" value="amoxicilina" ng-model="orderCreate.amoxicilina" id="amoxicilina" onchange="activate(this,'amoxicilinaCount')"><input type="number" style="width: 30px;" class="medCreate" name="amoxicilinaCount" ng-model="orderCreate.amoxicilinaCount" id="amoxicilinaCount" min="0" max="10" disabled>
+				</label>
+				<label>
+					Ramipril<input type="checkbox" name="ramipril" style="display: inline-block; margin-left: 4%" class="medicineCreate" value="ramipril" ng-model="orderCreate.ramipril" id="ramipril" onchange="activate(this,'ramiprilCount')"><input type="number" style="width: 30px;" name="ramiprilCount" class="medCreate" ng-model="orderCreate.ramiprilCount" id="ramiprilCount" min="0" max="10" disabled>
+				</label>
+				<input type="button" id="buttonCreate" value="Accept" onclick="convert('medicineCreate','medCreate','recet')">
+				<input type="text" id="recet" ng-model="orderCreate.OrderMeds" placeholder="Borre el ultimo ''/'' creado">
+			</label>
+			<label>
+				Pickup Time
+				<input class="input" type="time" name="time" autocomplete="off" ng-model="orderCreate.OrderTime" required>
+			</label>
+			<label>
+				Put the order's Id
+				<input class="input" type="number" name="number" autocomplete="off" ng-model="orderCreate.OrderId" required>
+			</label>
+			<input type="file" name="file" id="file" onchange="putPath()">
+			<input type="text" name="path" id="path" ng-model="orderCreate.OrderUrl" placeholder="Agregue un ''/'' al final">
+			<input type="submit" name="submit" value="Order" class="choice" >
+			<input type="reset" name="recet" value="Reset" class="choice">
+			<label>Update an order? <input type="checkbox" name="update" id="update" onchange="updateRecipe()"></label>
+			<label>Eliminate an order? <input type="checkbox" name="eliminate" id="eliminate" onchange="eliminateRecipe()"></label>
+		</fieldset>		
+	</form>
+	<form id="update_recipe" ng-submit="updateOrder()">
+		<fieldset>
+			<legend>Update Order</legend>
+			<label>
+				Order's Id
+				<input class="input" type="number" name="number" autocomplete="off" ng-model="orderUpdate.OrderId" required>
+			</label>
+			<label>
+				Pickup Branch
+				<select required ng-model="orderUpdate.OrderBranch">
+					<option value="">Choose...</option>
+					<option value="Autofarmacia Escazú">Autofarmacia Escazú</option>
+					<option value="Automercado Alajuela">Automercado Alajuela</option>
+					<option value="Automercado Escazú">Automercado Escazú</option>
+					<option value="Automercado Guadalupe">Automercado Guadalupe</option>
+					<option value="Automercado Heredia">Automercado Heredia</option>
+					<option value="Automercado Lindora">Automercado Lindora</option>
+					<option value="Automercado Moravia">Automercado Moravia</option>
+					<option value="Automercado Río Oro">Automercado Río Oro</option>
+					<option value="Automercado San Francisco de Heredia">Automercado San Francisco de Heredia</option>
+					<option value="Automercado Santo Domingo">Automercado Santo Domingo</option>
+				</select>
+			</label>
+			<label>
+				Name
+				<input class="input" type="text" name="clientName" autocomplete="off" ng-model="orderUpdate.OrderClient" required>
+			</label>
+			<label>
+				Preferred Phone
+				<input class="input" type="text" name="medications" pattern="[0-9]{8}" autocomplete="off" ng-model="orderUpdate.OrderPhoneNo" required>
+			</label>
+			<label>
+				<label>
+					Aspirina<input type="checkbox" name="aspirina" style="display: inline-block; margin-left: 4%" class="medicineUpdate" value="aspirina" id="aspirina" ng-model="orderUpdate.aspirina" onchange="activate(this,'aspirinaCountUpdate')"><input type="number" style="width: 30px;" class="medUpdate" name="aspirinaCount" ng-model="orderUpdate.aspirinaCount" id="aspirinaCountUpdate" min="0" max="10" disabled>
+				</label>
+				<label>
+					Acetaminofen<input type="checkbox" name="acetaminofen" style="display: inline-block; margin-left: 4%" class="medicineUpdate" value="acetaminofen" ng-model="orderUpdate.acetaminofen" id="acetaminofen" onchange="activate(this,'acetaminofenCountUpdate')"><input type="number" style="width: 30px;" class="medUpdate" name="acetaminofenCount" ng-model="orderUpdate.acetaminofenCount" id="acetaminofenCountUpdate" min="0" max="10" disabled>
+				</label>
+				<label>
+					Ibuprofeno<input type="checkbox" name="ibuprofeno" style="display: inline-block; margin-left: 4%" class="medicineUpdate" value="ibuprofeno" ng-model="orderUpdate.ibuprofeno" id="ibuprofeno" onchange="activate(this,'ibuprofenoCountUpdate')"><input type="number" style="width: 30px;" class="medUpdate" name="ibuprofenoCount" ng-model="orderUpdate.ibuprofenoCount" id="ibuprofenoCountUpdate" min="0" max="10" disabled>
+				</label>
+				<label>
+					Amoxicilina<input type="checkbox" name="amoxicilina" style="display: inline-block; margin-left: 4%" class="medicineUpdate" value="amoxicilina" ng-model="orderUpdate.amoxicilina" id="amoxicilina" onchange="activate(this,'amoxicilinaCountUpdate')"><input type="number" style="width: 30px;" class="medUpdate" name="amoxicilinaCount" ng-model="orderUpdate.amoxicilinaCount" id="amoxicilinaCountUpdate" min="0" max="10" disabled>
+				</label>
+				<label>
+					Ramipril<input type="checkbox" name="ramipril" style="display: inline-block; margin-left: 4%" class="medicineUpdate" value="ramipril" ng-model="orderUpdate.ramipril" id="ramipril" onchange="activate(this,'ramiprilCountUpdate')"><input type="number" style="width: 30px;" class="medUpdate" name="ramiprilCount" ng-model="orderUpdate.ramiprilCount" id="ramiprilCountUpdate" min="0" max="10" disabled>
+				</label>
+				<input type="button" id="buttonCreate" value="Accept" onclick="convert('medicineUpdate','medUpdate','recetUpdate')">
+				<input type="text" id="recetUpdate" ng-model="orderUpdate.OrderMeds" placeholder="Borre el ultimo ''/'' creado">
+			</label>
+			<label>
+				Pickup Time
+				<input class="input" type="time" name="time" autocomplete="off" ng-model="orderUpdate.OrderTime" required>
+			</label>
+			<input type="file" name="file" id="fileU" onchange="putPathU()">
+			<input type="text" name="pathU" id="pathU" ng-model="orderUpdate.OrderUrl" placeholder="Agregue un ''/'' al final">
+			<input type="submit" name="submit" value="Update" class="choice">
+			<input type="reset" name="recet" value="Reset" class="choice">
+		</fieldset>		
+	</form>
+	<form id="eliminate_recipe" ng-submit="deleteOrder()">
+		<fieldset>
+			<legend>Eliminate Order</legend>
+			<label>
+				Order's Id
+				<input class="input" type="Number" name="recipeNumber" autocomplete="off" ng-model="orderDelete.OrderId" required>
+			</label>
+			<input type="submit" name="submit" value="Delete" class="choice">
+		</fieldset>		
+	</form>
+</body>
+<script type="text/javascript">
+	
+</script>
+<footer>
+	&copy;Derechos Reservados
+</footer>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset= "UTF-8"/>
+	<title>BombaTica Pharmacy Registration</title>
+	<link rel="stylesheet" type="text/css" href="css/registerBomba.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/bombaMethodsAccount.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="appController">
+	<header>
+		<section id="navBar">
+			<span>BombaTica</span>
+			<nav class="aright">
+				<a href="homeBomba.html" >Home</a>
+			</nav>
+		</section>
+		<section id="title">
+			<h1>Account</h1>
+		</section>
+	</header>
+	<form id="registration" ng-submit="updateUser()">
+		<fieldset>
+			<legend>User data</legend>
+			<label>
+				Number Id
+				<input class="input" type="text" name="idNumber" pattern="[0-9]{9}" style="opacity: 0.7" autocomplete="off" ng-model="user.ClientId" disabled>
+			</label>
+			<label>
+				First Name
+				<input class="input" type="text" name="fName" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientFirstName" disabled>
+			</label>
+			<label>
+				Last Name
+				<input class="input" type="text" name="lName" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientLastName" disabled>
+			</label>
+			<label>
+				Residence Place
+				<input class="input" type="text" name="rPlace" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientAddress" disabled>
+			</label>
+			<label>
+				Birthdate
+				<input class="input" type="text" name="birth" value="1997-01-02" style="opacity: 0.7" autocomplete="off" ng-model="user.ClientBirthday" disabled>
+			</label>
+			<label>
+				Cell Phone
+				<input class="input" type="text" name="cPhone" pattern="[0-9]{8}" style="opacity: 0.7" ng-model="user.ClientPhoneNumber" autocomplete="off" disabled>
+			</label>
+			<label>
+				Record
+				<input class="input" type="text" name="record" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientAdditionalInformation" disabled>
+			</label>
+			<label>
+				Email
+				<input class="input" type="text" name="email" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientAccountEmail" disabled>
+			</label>
+			<label>
+				Password
+				<input class="input" type="password" name="password" autocomplete="off" style="opacity: 0.7" ng-model="user.ClientAccountPassword" disabled>
+			</label>
+			<input type="submit" name="submit" value="Submit" class="choice" disabled>
+			<input type="reset" name="recet" value="Reset" class="choice" disabled>
+			<input type="button" value="Update" class=" choise" id="choise" onclick="update()">
+			<script type="text/javascript">
+				function update(){
+					var activate = document.getElementsByClassName('input');
+					for(i = 1; i < activate.length; i++){
+						activate[i].removeAttribute('disabled');
+						activate[i].removeAttribute('style');
+					}
+					activate = document.getElementsByClassName('choice');
+					for(i = 0; i < activate.length; i++){
+						activate[i].removeAttribute('disabled');
+					}
+				}
+			</script>
+			<input type="button" value="Delete" class="choise" ng-click="deleteUser()">
+		</fieldset>
+	</form>
+</body>
+<footer>
+	&copy;Derechos Reservados
+</footer>
+</html>

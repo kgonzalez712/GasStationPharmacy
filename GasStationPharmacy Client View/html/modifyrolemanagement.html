@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Phischel Pharmacy Roles Managment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
+          <a class="navbar-brand" href="#">Phischel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="location.href = '../Admin.html#'"
+                >Home <span class="sr-only">(current)</span></a>
+              </li>             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'addrolemanagement.html'"
+                  >Create</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'modifyrolemanagement.html'"
+                  >Modify</a>
+                  <a class="dropdown-item" href="#"
+                  onclick="location.href = 'deleterolemanagement.html'"
+                  >Delete</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main">
+    
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+              <div class="container" style="margin-left: -30px">
+                <h1 class="display-4" > <b>Role Management</b></h1>
+                <p >This page is for the management of everything related to roles</p>
+              </div>
+            </div>
+      
+            <div class="container" >
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>Add</h2>
+                  <p>To add a new role to the DB.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" 
+                    onclick="location.href = 'addrolemanagement.html'"
+                    >Add a role </a></p>                          
+                </div>
+                <div class="col-md-4">
+                  <h2>Modify</h2>
+                  <p>To change a role atributes or information.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button" 
+                    onclick="location.href = 'modifyrolemanagement.html'"
+                    >Modify a Role </a></p>
+                </div>
+                <div class="col-md-4">
+                  <h2>Delete</h2>  
+                  <p>To delete a role from the DB.</p>
+                  <p><a class="btn btn-secondary" href="#" role="button"
+                    onclick="location.href = 'deleterolemanagement.html'"
+                    >Delete Role </a></p>
+                </div>
+                <table class="table table-striped table-sm">
+                    <tr>
+                        <th>Role Name</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr onclick="location.href = 'modifyrole.html'">
+                        <th>Cajero</th>
+                        <th>Hace las transacciones con los clientes.</th>
+                    </tr>
+                </table>
+              </div>      
+              <hr>      
+            </div> <!-- /container -->
+      
+          </main>
+        
+        
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

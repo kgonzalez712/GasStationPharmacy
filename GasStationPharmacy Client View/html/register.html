@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script> src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GasStationPharmacy/Register</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.css" rel="stylesheet">
+</head>
+<body class="bg-light" style="background-image:url(../img/pharmacy.jpg)">
+        <div class="container">
+      <div class="py-5 text-center">
+        <h2 style="font-variant: small-caps; font-size: 50px">Phischel Pharmacy</h2>
+      </div>
+        <div style="background-color:rgba(255, 255, 255, 0.651)">
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name:</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name:</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+            </div>
+            <div class = "col-md-6 mb-3">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id = "password" placeholder="Password" required>
+            </div>
+            </div>
+            <div class = "row">
+            <div class="col-md-6 mb-3">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" placeholder="100 Main St..." required>
+            </div> 
+            <div class = "col-md-6 mb-3">
+                <label for="Telephone">Telephone:</label>
+                <input type="text" class="form-control" id="telephone" placeholder="12345678" required>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id">Identification Card:</label>
+                    <input type="text" class="form-control" id="Identification Card" placeholder="1 2345 6789">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="birthdate">Birthdate:</label>
+                    <input type="date" class="form-control" id="birthdate" required>
+                </div>
+                </div>
+                <div class="mb-3">
+                    <label for="sufferings">Sufferings:</label>
+                </div>
+                <div class="mb-3">
+                  <textarea name="sufferings" id="sufferings" cols="126" rows="7" required></textarea>
+                </div>    
+        </form>
+        </div>
+    </div>
+        <div>    
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Sing in</button>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+            <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script></body>
+    </html>

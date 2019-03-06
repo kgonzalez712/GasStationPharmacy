@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset= "UTF-8"/>
+	<title>BombaTica Pharmacy</title>
+	<link rel="stylesheet" type="text/css" href="css/phishelBomba.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/bomba.js"></script>
+	<script type="text/javascript" src="js/bombaMethods.js"></script>
+	<script type="text/javascript" src="js/bombaOrder.js"></script>
+	<style type="text/css">
+		.thumb{
+			height: 400px;
+			width: 100%;
+		}
+		body{
+			background-color: rgba(234,109,18,0.1);
+		}
+	</style>
+</head>
+<body ng-app="myApp" ng-controller="appController">
+	<header>
+		<section id="navBar">
+			<span>BombaTica</span>
+			<nav class="aright">
+				<a href="registerBomba.html" >Register</a>
+				<a href="logInBomba.html">Log in</a>
+				<a href="accountBomba.html"><i class="fas fa-user fa-1x"></i></a>
+			</nav>
+		</section>
+		<section id="title">
+			<h1>BombaTica Pharmacy</h1>
+			<nav>
+				<a href="homeBomba.html">Home</a>
+				<a href="enter_recipeBomba.html" class="active">Enter Recipe</a>
+				<a href="orderBomba.html">Order</a>				
+			</nav>
+		</section>
+	</header>
+	<form id="enter_recipe" ng-submit="createRecipe()">
+		<fieldset>
+			<legend>Enter Recipe</legend>
+			<div id="previewEnter"></div>			
+			<label>
+				Recipe Number
+				<input class="input" type="Number" name="recipeNumber" autocomplete="off" required ng-model="recipeCreate.RecipeNumber">
+			</label>
+			<label>
+				Doctor
+				<input class="input" type="text" name="doctorName" autocomplete="off" required ng-model="recipeCreate.RecipeDoc">
+			</label>
+			<label>
+				Pre-registered Medications
+				<input class="input" type="text" name="medications" autocomplete="off" required ng-model="recipeCreate.RecipeMed">
+			</label>
+			<input type="submit" name="submit" value="Add" class="choice">
+			<input type="reset" name="recet" value="Reset" class="choice">
+			<input type="file" name="file" class="choice" id="file" onchange="putPath()">
+			<input type="text" name="path" id="path" ng-model="recipeCreate.RecipeUrl" placeholder="Agregue un ''/'' al final">
+			<script type="text/javascript">
+				function archivo(evt) {
+      				var files = evt.target.files; // FileList object
+       
+        			//Obtenemos la imagen del campo "file". 
+      				for (var i = 0, f; f = files[i]; i++) {         
+           				//Solo admitimos imágenes.
+           				if (!f.type.match('image.*')) {
+               				continue;
+           				}
+       
+           				var reader = new FileReader();
+           
+           				reader.onload = (function(theFile) {
+               				return function(e) {
+               					// Creamos la imagen.
+                      			document.getElementById("previewEnter").innerHTML = ['<img class= "thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+               				};
+           				})(f);
+ 
+           				reader.readAsDataURL(f);
+       				}
+				}
+             
+     			 document.getElementById('file').addEventListener('change', archivo, false);
+			</script>
+			<label>Update a recipe? <input type="checkbox" name="update" id="update" onchange="updateRecipe()"></label>
+			<label>Eliminate a recipe? <input type="checkbox" name="eliminate" id="eliminate" onchange="eliminateRecipe()"></label>
+		</fieldset>		
+	</form>
+
+
+	<form id="update_recipe" ng-submit="updateRecipe()">
+		<fieldset>
+			<legend>Update Recipe</legend>
+			<div id="previewUpdate"></div>
+			<label>
+				Recipe Number
+				<input class="input" type="Number" name="recipeNumber" autocomplete="off" required ng-model="recipeUpdate.RecipeNumber">
+			</label>
+			<label>
+				Doctor
+				<input class="input" type="text" name="doctorName" autocomplete="off" required  ng-model="recipeUpdate.RecipeDoc">
+			</label>
+			<label>
+				Pre-registered Medications
+				<input class="input" type="text" name="medications" autocomplete="off" required ng-model="recipeUpdate.RecipeMed">
+			</label>
+			<input type="submit" name="submit" value="Update" class="choice">
+			<input type="reset" name="recet" value="Reset" class="choice">
+			<input type="file" name="file" class="choice" id="fileU" onchange="putPathU()">
+			<input type="text" name="pathU" id="pathU" ng-model="recipeUpdate.RecipeUrl" placeholder="Agregue un ''/'' al final"> 
+			<script type="text/javascript">
+				function archivo(evt) {
+      				var files = evt.target.files; // FileList object
+       
+        			//Obtenemos la imagen del campo "file". 
+      				for (var i = 0, f; f = files[i]; i++) {         
+          				//Solo admitimos imágenes.
+           				if (!f.type.match('image.*')) {
+                			continue;
+           				}
+       
+           				var reader = new FileReader();
+           
+           				reader.onload = (function(theFile) {
+               				return function(e) {
+               				// Creamos la imagen.
+                      		document.getElementById("previewUpdate").innerHTML = ['<img class= "thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+               				};
+           				})(f);
+ 
+           				reader.readAsDataURL(f);
+       				}
+				}
+             
+      			document.getElementById('fileU').addEventListener('change', archivo, false);
+			</script>
+		</fieldset>		
+	</form>
+	<form id="eliminate_recipe" ng-submit="deleteRecipe()">
+		<fieldset>
+			<legend>Eliminate Recipe</legend>
+			<label>
+				Recipe Number
+				<input class="input" type="Number" name="recipeNumber" autocomplete="off" required ng-model="recipeDelete.RecipeNumber">
+			</label>
+			<input type="submit" name="submit" value="Delete" class="choice">
+		</fieldset>		
+	</form>
+</body>
+<footer>
+	&copy;Derechos Reservados
+</footer>
+</html>

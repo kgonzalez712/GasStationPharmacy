@@ -1,0 +1,141 @@
+body{
+	margin: 0px;
+	background-image: url("../img/farmacia.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#navBar{
+	background-color: #a12428;
+	color: #ffffff;
+	padding-right: 6%;
+	padding-left: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	width: 100%;
+}
+
+#navBar span{
+	font-size: 25px;
+	font-variant-caps: small-caps;
+	font-weight: bold;
+}
+
+.aright{
+	display: inline-block;
+	float: right;
+	padding-right: 1%;
+	padding-left: 1%;
+	width: 4%;
+	padding-top: 0.5%;
+}
+
+.aright a{
+	color: #ffffff;
+	text-decoration: none;
+	margin-right: 1%;
+	padding: 6%;
+}
+
+.aright a:hover{
+	background-color: #d25712;
+	color: #ffffff ;
+}
+
+#title{
+	/*background-color: #d25712;*/
+	background-color: rgba(210,87,18,0.7);
+	/*background-image: url("../img/farmacia.jpg");*/
+	background-origin: top;
+	background-size: cover;
+	width: 100%;
+	text-align: left;
+	float: left;
+	color: #ffffff;
+	margin-bottom: 2%;
+}
+
+#title h1{
+	text-transform: uppercase;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	margin-left: 2%;
+	font-size: 65px;
+	color: rgba(161,36,40,1);
+	color: #ffffff;
+}
+
+#title a{
+	color: #ffffff;
+	background-color: rgba(186,60,33,0.5);
+	text-decoration: none;
+	padding: 1%;
+	display: inline-block;
+	border-radius: 5px;
+	margin-right: 2%;
+	width: 20%;
+}
+
+#title .active{
+	background-color: #ba3c21;
+	font-variant-caps: small-caps;
+	text-decoration: underline;
+}
+
+#registration fieldset{
+	width: 50%;
+	margin: 0 auto;
+	border-color: #d25712;
+	background-color: rgba(255,255,255,0.8);	
+}
+
+#registration legend{
+	background-color: #a12428;
+	border-radius: 10px;
+	padding: 1%;
+	color: #ffffff;
+}
+
+#registration label{
+	width: 100%;
+}
+
+#registration label, input{
+	display: block;
+	margin-left: 1%;
+	margin-bottom: 3%;
+	margin-top: 1%;
+	color: #a12428;
+	font-weight: bold;
+}
+
+#registration .input{
+	width: 50%;
+	border-color: #a12428; 
+	border-style: inset;
+	border-radius: 5px;
+	background-color: #fafdd5;
+	padding: 1%;
+	color: #000000;
+	font-weight: normal;
+}
+
+#registration .choice{
+	display: inline-block;
+	width: 10%;
+	/*padding: 1%;*/
+	color: #000000;
+	font-weight: normal;
+}
+
+footer{
+	background-color: #a12428;
+	margin-top: 8%;
+	padding: 30px;
+	text-align: center;
+	color: #ffffff;
+}
+
+/**{
+	border: solid;
+}*/
